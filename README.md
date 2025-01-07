@@ -1,4 +1,4 @@
-# COMP.SEC.220-Coursework2
+# Coursework for security protocols course
 This is the program for the coursework 2 in the course COMP.SEC.220-Coursework2 by Lauri Pollari.
 It implements the SPADE scheme and allows partial decryption from the database with a value. Value must be in the dataset.
 
@@ -10,7 +10,7 @@ Some files/functions may have not have been used, in utils for example. Performa
 1. CHECK THE CONFIG: the value of MAX_PT_VEC_SIZE sets the size of the keys and plaintext and ciphertext. 
    There is padding if the data isn't long enough (only when files are processed via utils).
 
-2. Add the datasets to the datasets folder (should be datasets/dna and datasets/hypnogram)
+2. Add the datasets to the datasets folder (should be datasets/dna and datasets/hypnogram).
    Currently only has 3 hypnogram files in git.
 
 4. Run the server on command window (I have used bash): Python app.py
