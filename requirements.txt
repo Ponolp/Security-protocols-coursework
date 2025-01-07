@@ -1,0 +1,4 @@
+# requirements.txt
+sympy==1.11.1  # For modular arithmetic operations
+sqlite3
+
