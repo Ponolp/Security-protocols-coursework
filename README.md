@@ -3,20 +3,20 @@ This is the program for the coursework 2 in the course COMP.SEC.220-Coursework2 
 It implements the SPADE scheme and allows partial decryption from the database with a value. Value must be in the dataset.
 
 ## README
-The program doesn't completely match the specification in the given paper, at least in terms of performance times.
 The SPADE algorhitm I have tested to be working correctly. Use of the data and users isn't perfected.
-Some files/functions may have not have been used, in utils for example.
+Some files/functions may have not have been used, in utils for example. Performance time with greater datasets isn't great.
 
 ## How to run the program
 1. CHECK THE CONFIG: the value of MAX_PT_VEC_SIZE sets the size of the keys and plaintext and ciphertext. 
    There is padding if the data isn't long enough (only when files are processed via utils).
 
 2. Add the datasets to the datasets folder (should be datasets/dna and datasets/hypnogram)
+   Currently only has 3 hypnogram files in git.
 
-3. Run the server on command window (I have used bash): Python app.py
+4. Run the server on command window (I have used bash): Python app.py
    NOTE!: If the server restarts and the database isn't removed, the decryption won't work on the old data since the keys are changed.
 
-4. There are test files for both usecases: dna.py and hypnogram.py
+5. There are test files for both usecases: dna.py and hypnogram.py
    NOTE!: Set the desired user amount and vector size in the config file.
     To run these: Python TESTFILENAME
     The tests are slow though (about 2s per user), when making POST requests straight from the server, the time is much faster.
@@ -26,7 +26,7 @@ Some files/functions may have not have been used, in utils for example.
    NOTE!: There is no padding so MAX_PT_VEC_SIZE should be set to same as the data vector size
     To run these: Python TESTFILENAME   (Check the configs and query id and value (must be in database)!!)
 
-5. If one wants to make queries themself, it is possible to make requests, examples below 
+6. If one wants to make queries themself, it is possible to make requests, examples below 
    NOTE!: There is no padding so MAX_PT_VEC_SIZE should be set to same as the data vector size (e.g. 12 for the ones below)
 
     curl -X POST http://localhost:5000/dna/register \
@@ -45,7 +45,7 @@ Some files/functions may have not have been used, in utils for example.
      -H "Content-Type: application/json" \
      -d '{"user_id": 1, "query_value": 7}'
 
-6. There is a file to try the benchmark without the use of server: test_app.py
+7. There is a file to try the benchmark without the use of server: test_app.py
    It's more suitable for more users, though the prints may take a while.
    To run this: python test_app.py   (server should not be running!!)
 
